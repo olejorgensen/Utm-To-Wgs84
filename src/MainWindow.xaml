@@ -1,0 +1,40 @@
+﻿<Window x:Class="ProjNetUI.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjNetUI"
+        mc:Ignorable="d"
+        Title="UtmToWgs" Height="200.609" Width="392.78">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <Label Content="Latitude" />
+        <TextBox x:Name="latitudeTextBox" Text="55.674525" TextChanged="LatLonTextChanged" Grid.Row="1"/>
+        
+        <Label Content="Longitude" Grid.Column="1" />
+        <TextBox x:Name="longitudeTextBox" Text="12.571215" TextChanged="LatLonTextChanged" Grid.Column="1" Grid.Row="1"/>
+        
+        <Label Content="Northing" Grid.Row="2" />
+        <TextBox x:Name="northing" Text="720613" TextChanged="Utm32TextChanged" Grid.Row="3" />
+        <Label Content="Easting" Grid.Row="2" Grid.Column="1" />
+        <TextBox x:Name="easting" Text="6176145" Grid.Column="1" Grid.Row="3" TextChanged="Utm32TextChanged"/>
+
+        <Label Content="Zone" Grid.Row="2" Grid.Column="2" />
+        <ComboBox x:Name="zone" Grid.Row="3" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="LatLonTextChanged" />
+        <Label Content="North" Grid.Row="2" Grid.Column="3" />
+        <CheckBox x:Name="isNorth" Grid.Row="3" Grid.Column="3" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" IsChecked="True" Checked="isNorth_Checked" />
+
+    </Grid>
+</Window>
